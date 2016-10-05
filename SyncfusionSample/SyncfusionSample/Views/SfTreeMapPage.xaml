@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfTreeMap.XForms;assembly=Syncfusion.SfTreeMap.XForms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SyncfusionSample.Views.SfTreeMapPage">
+
+  <ContentPage.Content >
+
+    <syncfusion:SfTreeMap x:Name="TreeMap"
+                          DataSource="{Binding TreeMapItems}"
+                          WeightValuePath="WeightValue"
+                          ColorValuePath="WeightValue"
+                          VerticalOptions="FillAndExpand"
+                          HorizontalOptions="FillAndExpand">
+
+      <syncfusion:SfTreeMap.LeafItemSettings>
+        <syncfusion:LeafItemSettings BorderWidth="1" BorderColor="White" ShowLabels="False" LabelPath="Text"/>
+      </syncfusion:SfTreeMap.LeafItemSettings>
+
+      <syncfusion:SfTreeMap.ItemTemplate>
+
+        <DataTemplate>
+          <Grid>
+            <Image x:Name="Image" 
+                   HorizontalOptions="FillAndExpand" 
+                   VerticalOptions= "FillAndExpand" 
+                   Source="{Binding Data.ImageSource}" 
+                   Aspect="AspectFill" />
+
+            <BoxView WidthRequest="{Binding Source={x:Reference Image},  Path=Width}"
+                     HeightRequest="{Binding Source={x:Reference Image},  Path=Height}"
+                     BackgroundColor="#4D000000" />
+
+            <Label Text= "{Binding Data.Text}"
+                   WidthRequest="{Binding Source={x:Reference Image},  Path=Width}"
+                   HeightRequest="{Binding Source={x:Reference Image},  Path=Height}"
+                   TextColor = "White"/>
+
+          </Grid>
+        </DataTemplate>
+
+      </syncfusion:SfTreeMap.ItemTemplate>
+
+    </syncfusion:SfTreeMap>
+
+  </ContentPage.Content>
+
+</ContentPage>

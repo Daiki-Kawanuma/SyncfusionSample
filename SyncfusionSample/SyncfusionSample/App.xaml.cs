@@ -11,7 +11,7 @@ namespace SyncfusionSample
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("SfBusyIndicatorPage");
+            NavigationService.NavigateAsync("SfTreeMapPage");
         }
 
         protected override void RegisterTypes()
@@ -19,6 +19,7 @@ namespace SyncfusionSample
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<SfDataGridPage>();
             Container.RegisterTypeForNavigation<SfBusyIndicatorPage>();
+            Container.RegisterTypeForNavigation<SfTreeMapPage>();
         }
     }
 }

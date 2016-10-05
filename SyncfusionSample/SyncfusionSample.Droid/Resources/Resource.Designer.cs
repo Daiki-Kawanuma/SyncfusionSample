@@ -4067,6 +4067,9 @@ namespace SyncfusionSample.Droid
 			// aapt resource value: 0x7f07001e
 			public const int always = 2131165214;
 			
+			// aapt resource value: 0x7f07009b
+			public const int background = 2131165339;
+			
 			// aapt resource value: 0x7f07001b
 			public const int beginning = 2131165211;
 			
@@ -4192,6 +4195,12 @@ namespace SyncfusionSample.Droid
 			
 			// aapt resource value: 0x7f070000
 			public const int item_touch_helper_previous_elevation = 2131165184;
+			
+			// aapt resource value: 0x7f07009d
+			public const int labelLayout = 2131165341;
+			
+			// aapt resource value: 0x7f07009c
+			public const int layout = 2131165340;
 			
 			// aapt resource value: 0x7f07002f
 			public const int left = 2131165231;
@@ -4324,6 +4333,9 @@ namespace SyncfusionSample.Droid
 			
 			// aapt resource value: 0x7f070030
 			public const int right = 2131165232;
+			
+			// aapt resource value: 0x7f07009a
+			public const int rootLayout = 2131165338;
 			
 			// aapt resource value: 0x7f070017
 			public const int screen = 2131165207;
@@ -4723,6 +4735,9 @@ namespace SyncfusionSample.Droid
 			
 			// aapt resource value: 0x7f030039
 			public const int toolbar = 2130903097;
+			
+			// aapt resource value: 0x7f03003a
+			public const int treemap_layout = 2130903098;
 			
 			static Layout()
 			{
