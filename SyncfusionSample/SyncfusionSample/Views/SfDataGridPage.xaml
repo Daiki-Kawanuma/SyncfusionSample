@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms" 
+             x:Class="SyncfusionSample.Views.SfDataGridPage">
+
+  <ContentPage.Content>
+    <syncfusion:SfDataGrid x:Name="DataGrid"
+                           ItemsSource="{Binding Collection}"
+                           VerticalOptions="FillAndExpand"
+                           HorizontalOptions="FillAndExpand"
+                           ColumnSizer="Auto"
+                           AllowSorting="True"/>
+  </ContentPage.Content>
+
+</ContentPage>

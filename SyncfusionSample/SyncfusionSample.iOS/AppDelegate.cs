@@ -6,6 +6,7 @@ using Foundation;
 using UIKit;
 using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Syncfusion.SfDataGrid.XForms.iOS;
 
 namespace SyncfusionSample.iOS
 {
@@ -25,7 +26,8 @@ namespace SyncfusionSample.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App(new iOSInitializer()));
+            SfDataGridRenderer.Init();
+            LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
         }
