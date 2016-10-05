@@ -11,13 +11,14 @@ namespace SyncfusionSample
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("SfDataGridPage");
+            NavigationService.NavigateAsync("SfBusyIndicatorPage");
         }
 
         protected override void RegisterTypes()
         {
             Container.RegisterTypeForNavigation<MainPage>();
             Container.RegisterTypeForNavigation<SfDataGridPage>();
+            Container.RegisterTypeForNavigation<SfBusyIndicatorPage>();
         }
     }
 }
