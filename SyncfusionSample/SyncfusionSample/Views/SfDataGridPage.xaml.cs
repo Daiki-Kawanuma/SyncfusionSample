@@ -1,4 +1,8 @@
-﻿using Xamarin.Forms;
+﻿using System;
+using System.Diagnostics;
+using Syncfusion.SfDataGrid.XForms;
+using SyncfusionSample.ViewModels;
+using Xamarin.Forms;
 
 namespace SyncfusionSample.Views
 {
@@ -7,6 +11,20 @@ namespace SyncfusionSample.Views
         public SfDataGridPage()
         {
             InitializeComponent();
+        }
+
+        protected override void OnBindingContextChanged()
+        {
+            base.OnBindingContextChanged();
+
+            SfDataGridPageViewModel viewModel = BindingContext as SfDataGridPageViewModel;
+            if (viewModel != null)
+            {
+                viewModel.BindCollection += (sender, args) =>
+                {
+                    this.DataGrid.ItemsSource = viewModel.Collection;
+                };
+            }
         }
     }
 }

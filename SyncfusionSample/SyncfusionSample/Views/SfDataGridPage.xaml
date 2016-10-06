@@ -8,7 +8,7 @@
 
   <ContentPage.Content>
     <syncfusion:SfDataGrid x:Name="DataGrid"
-                           ItemsSource="{Binding Collection}"
+                           
                            VerticalOptions="FillAndExpand"
                            HorizontalOptions="FillAndExpand"
                            ColumnSizer="Auto"

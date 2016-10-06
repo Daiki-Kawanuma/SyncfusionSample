@@ -11,7 +11,7 @@ namespace SyncfusionSample
         {
             InitializeComponent();
 
-            NavigationService.NavigateAsync("SfTreeMapPage");
+            NavigationService.NavigateAsync("SfDataGridPage");
         }
 
         protected override void RegisterTypes()

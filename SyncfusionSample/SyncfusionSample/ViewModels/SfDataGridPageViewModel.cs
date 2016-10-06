@@ -3,15 +3,31 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
+using System.Windows.Input;
+using Prism.Navigation;
+using Xamarin.Forms;
 
 namespace SyncfusionSample.ViewModels
 {
-    public class SfDataGridPageViewModel : BindableBase
+    public class SfDataGridPageViewModel : BindableBase, INavigationAware
     {
+        public event EventHandler<EventArgs> BindCollection;
+
         public ObservableCollection<dynamic> Collection { get; set; }
 
         public SfDataGridPageViewModel()
+        {
+            
+        }
+
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
         {
             switch (new Random().Next() % 3)
             {
@@ -27,6 +43,8 @@ namespace SyncfusionSample.ViewModels
                     Collection = Idol.GenerateIdols();
                     break;
             }
+
+            BindCollection?.Invoke(this, EventArgs.Empty);
         }
 
         public class OrderInfo
