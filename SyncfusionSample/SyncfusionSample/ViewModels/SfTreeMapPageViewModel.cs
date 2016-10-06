@@ -5,18 +5,30 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using Prism.Navigation;
 using Syncfusion.SfTreeMap.XForms;
 using Xamarin.Forms;
 
 namespace SyncfusionSample.ViewModels
 {
-    public class SfTreeMapPageViewModel : BindableBase
+    public class SfTreeMapPageViewModel : BindableBase, INavigationAware
     {
+        public event EventHandler<EventArgs> BindCollection;
+
         public ObservableCollection<CustomTreeMapItem> TreeMapItems { get; set; }
 
         public SfTreeMapPageViewModel()
         {
-            Debug.WriteLine("Called: SfTreeMapPageViewModel");
+            
+        }
+
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+
+        }
+
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
             var collection = new ObservableCollection<CustomTreeMapItem>
             {
                 new CustomTreeMapItem()
@@ -82,7 +94,10 @@ namespace SyncfusionSample.ViewModels
             };
 
             TreeMapItems = collection;
+
+            BindCollection?.Invoke(this, EventArgs.Empty);
         }
+
     }
 
     public class CustomTreeMapItem
